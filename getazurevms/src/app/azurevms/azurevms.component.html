@@ -1,0 +1,9 @@
+<h2>Azure VM List</h2>
+<ul class="azurevms">
+    <li *ngFor="let azurevm of azurevms">
+        <a routerLink="/azurevmdetail/{{azurevm.Name}}">
+            <span class="badge">{{azurevm.id}}</span> {{azurevm.Name}}
+        </a>
+    </li>
+</ul>
+

@@ -1,0 +1,9 @@
+<h3>Azure VMs</h3>
+<div class="grid grid-pad">
+  <a *ngFor="let azurevm of azurevms" class="col-1-4"
+    routerLink="/azurevmdetail/{{azurevm.Name}}">
+    <div class="module azurevm">
+      <h4>{{azurevm.Name}}</h4>
+    </div>
+  </a>
+</div>
