@@ -9,10 +9,14 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 
 export class AzurevmService {
-  private azurevmAPI = 'http://localhost:8080/getazurevms'
+  private azurevmAPI = 'http://172.30.164.231:8000/getazurevms';
+  azurevms:Observable<Azurevm[]>;
+
 
   getAzureVMs(): Observable<Azurevm[]> {
-    return of(AZUREVMS)
+    this.azurevms = this.http.get<Azurevm[]>(this.azurevmAPI);
+    console.log(this.azurevms);
+    return this.azurevms;
   }
 
   getAzureVM(Name: string): Observable<Azurevm> {
